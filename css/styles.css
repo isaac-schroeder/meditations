@@ -1,6 +1,129 @@
+/* css/styles.css */
+
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../images/landingpagebackground3.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
 }
+
+.navbar {
+    background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.navbar-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-menu li {
+    float: none;
+}
+
+.navbar-menu li a {
+    display: block;
+    color: #000; /* Black text */
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar-menu li a:hover {
+    background-color: rgba(1, 1, 1, .8); /* Slight darkening on hover */
+    color: white;
+}
+
+.navbar-toggle {
+    display: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    padding: 14px 16px;
+    position: absolute;
+    right: 0;
+}
+
+.landing-content {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    height: 100vh;
+    box-sizing: border-box;
+}
+
+.content-box {
+    background-color: rgba(255, 255, 255, .1); /* White with 80% opacity */
+    padding: 20px;
+    text-align: center;
+    max-width: 100;
+    width: 100%;
+}
+
+.content-box h1,
+.content-box p {
+    color: #000; /* Black text */
+    margin: 20px 0;
+}
+
 h1 {
-    color: #333;
+    font-size: 3em;
+
+}
+
+p {
+    font-size: 1.2em;
+}
+
+/* Responsive Menu */
+@media screen and (max-width: 600px) {
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('../images/landingpagebackground4.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+  }
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+
+    }
+
+    .navbar-menu.show {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        width: 100%;
+    }
+
+    .navbar-menu li a {
+        text-align: center;
+        padding: 14px;
+    }
+
+    .content-box h1 {
+        font-size: 2em;
+    }
+
+    .content-box p {
+        font-size: 1em;
+    }
 }
