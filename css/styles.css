@@ -7,24 +7,36 @@
     font-style: normal;
 }
 
+html {
+    overflow: auto;
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+}
+
+/* For Chrome, Safari, and other WebKit browsers */
+html::-webkit-scrollbar {
+    display: none;
+}
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: url('../images/landingpagebackground3.jpg') no-repeat center center fixed;
+    background: url('../images/landingpagebackground5.jpg') no-repeat center center fixed;
     background-size: cover;
-    color: #fff;
-    text-align: center;
+    color: #000; /* Black text */
+
 }
 
 .navbar {
-    background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+    background-color: rgba(255, 255, 255, 1); /* White with 80% opacity */
     overflow: hidden;
-    position: fixed;
+    position: relative;
     width: 100%;
     top: 0;
     z-index: 1000;
     padding: 10px 0;
+    border-bottom: 2px solid #000;
 }
 
 .navbar-menu {
@@ -33,6 +45,7 @@ body {
     padding: 0;
     display: flex;
     justify-content: center;
+
 }
 
 .navbar-menu li {
@@ -66,8 +79,9 @@ body {
     display: flex;
     justify-content: center;
     align-items:center;
-    height: 100vh;
+    height: 60vh;
     box-sizing: border-box;
+    font-family: 'Reenie Beanie', Arial, sans-serif; /* Apply the custom font */
 }
 
 .content-box {
@@ -82,36 +96,67 @@ body {
 .content-box p {
     color: #000; /* Black text */
     margin: 20px 0;
+
 }
 
-h1 {
-    font-size: 3em;
-    font-family: 'Reenie Beanie', Arial, sans-serif; /* Apply the custom font */
+.content-box p {
+  font-size: 1.8em;
 }
 
-p {
-    font-size: 1.8em;
-    font-family: 'Reenie Beanie', Arial, sans-serif; /* Apply the custom font */
+.whitepaper {
+    position: relative;
+    z-index: 1; /* Ensure it's above the main content but below the navbar */
+    overflow-y: auto; /* Enable scrolling for content inside */
+    line-height: 1.6;
+    display: flex;
+    align-items: center ;
+    flex-direction: column;
+}
+.blog-content {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 4em;
+  width: 60%; /* Covering 60% of the width */
+  background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
 }
 
+.blog-post h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.date {
+    white-space: nowrap; /* Prevents the date from breaking into multiple lines */
+    margin-left: auto; /* Pushes the date to the right */
+    font-size: .5em;
+}
+
+.images-container {
+    display: flex; /* Enables flexbox layout */
+    justify-content: center; /* Centers the flex items horizontally */
+    align-items: center; /* Aligns items vertically in the center, if needed */
+    width: 40%; /* Takes the full width of its parent */
+    margin: 0 auto; /* Additionally centers the container itself if it has a specific width */
+}
+
+.image {
+    margin: 10px; /* Adds space between the images */
+    max-width: 100%; /* Ensures images are responsive and do not overflow their container */
+    height: auto; /* Maintains aspect ratio */
+}
 /* Responsive Menu */
 @media screen and (max-width: 600px) {
   body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
     background: url('../images/landingpagebackground4.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
-    text-align: center;
   }
+
     .navbar-toggle {
         display: block;
     }
 
     .navbar-menu {
         flex-direction: column;
-
     }
 
     .navbar-menu.show {
@@ -133,5 +178,15 @@ p {
 
     .content-box p {
         font-size: 1em;
+    }
+
+    .whitepaper {
+        width: 80%; /* Covering 60% of the width */
+        left: 0%; /* Centering the content (since 100% - 60% = 40% and 40% / 2 = 20%) */
+    }
+
+    .images-container {
+        flex-direction: column; /* Stacks images vertically on smaller screens */
+        width: 80%; /* Takes the full width of its parent */
     }
 }
