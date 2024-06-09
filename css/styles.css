@@ -180,9 +180,12 @@ body {
         font-size: 1em;
     }
 
-    .whitepaper {
+  .whitepaper {
+    width: 100%;
+  }
+
+    .blog-content {
         width: 80%; /* Covering 60% of the width */
-        left: 0%; /* Centering the content (since 100% - 60% = 40% and 40% / 2 = 20%) */
     }
 
     .images-container {
